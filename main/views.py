@@ -11,12 +11,15 @@ def home(request):
         }
     return render(request, "home.html", context)
 
-def project_list(request):
+def project(request, projectID):
+    t = ProjectDB.objects.filter(id=projectID).latest('updated')
+    print t.name
+
     moo = 'moo here'
     context = {
-        "moo": moo,
+        "t": t,
         }
-    return render(request, "home.html", context)
+    return render(request, "project.html", context)
 
 
 def moocow(request):
