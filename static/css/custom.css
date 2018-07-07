@@ -1,0 +1,18 @@
+body {
+    min-height: 2000px;
+  }
+  
+  .navbar-static-top {
+    margin-bottom: 19px;
+  }
+
+  nav {
+    color: #4d4d4d !important;
+  }
+
+  a {
+    color: #4d4d4d !important;
+    background-color: transparent; 
+    -webkit-text-decoration-skip: 
+  
+  }

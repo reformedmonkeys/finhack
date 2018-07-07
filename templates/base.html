@@ -6,36 +6,70 @@
        <!-- start: Header -->
        <title>{% block head_title %}{% endblock %}</title>
         
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
         <link rel='shortcut icon' type='image/x-icon' href="{% static 'img/favicon.ico' %}" />
 
 
     </head>
     <body>
+            <nav class="white" role="navigation">
+                    <div class="nav-wrapper container navbar-fixed">
+                            
+                        <a id="logo-container" href="#" class="brand-logo center"><img src="{% static 'img/logo.png' %}"></a>
 
+                      <ul class="left hide-on-med-and-down">
+                        <li><a href="#" class="active">Explore</a></li>
+                        <li><a href="#">Fundraise</a></li>
+                      </ul>
+
+                      <ul class="right hide-on-med-and-down">
+                            <li><a href="#">My Profile</a></li>
+                    </ul>
+                
+                      <!-- <ul id="nav-mobile" class="sidenav">
+                        <li><a href="#">Navbar Link</a></li>
+                      </ul>
+                      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+                    </div>
+                  </nav>
+
+            
+
+                  
+
+
+
+
+
+                  <div class="container">
 
         {% block content %}
 
             {% endblock %}
 
-
+</div>
                 
 
 <!-- start: Footer -->
+<script>
+        var SearchID = "232";
+    </script>
 
-    </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+</body>
     <footer>
         {% block footer %}
 
         {% endblock %}
 
-        <script>
-            var SearchID = "232";
-        </script>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     </footer>
 </html>
