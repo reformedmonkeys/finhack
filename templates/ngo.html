@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block head_title %}
+  {{ owner.name }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="section" >
+        <div class="container">
+          <!-- <br><br> -->
+          
+          <!-- <div class="row center">
+            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          </div>
+          <div class="row center">
+            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light grey">Get Started</a>
+          </div>
+          <br><br> -->
+        </div>
+      </div>
+
+
+
+        <div class="row center">
+
+                <div class="col s12 m12 grey-text">
+                        <img src="{{ owner.image }}" alt="" class="" style = "max-width: 25%">
+                    
+                      <h4 class="header"> {{ owner.name }} </h4>
+                      <br>
+                  
+                      <p>Completion Score: X | Transparency Score: Y | Information Score: Z</p>
+
+                      
+                      <p>Total Projects: X | Total Tokens Raised: Y | Red Flags: Z</p>
+                      <br>
+                      <hr/>
+                    
+
+
+                      <br>
+                      <h4 class="header">Current Projects </h4>
+                      <br>
+                      {% for object in queryset %}
+
+                      <div class="card-image">
+                            <div class="card-image">
+                              <img src="{{ object.extra2 }}" style = "height: 400px">
+                            </div>
+                            <div class="card-stacked">
+                              <div class="card-content">
+                                      <h5> {{ object.name }}</h5> 
+                                      <br>
+                                <p>Location : {{ object.extra1 }}</p>
+                                <br>
+                                <p>Total Milestones: {{ object.milestones }}</p>
+                              </div>
+                              <div class="card-action center">
+                                      <a href="{% url 'project' object.id %}" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+                              </div>
+                            </div>
+                          </div>
+
+                      {% endfor %}
+                      <br><br><br><br><br>
+                      <h3 class = "orange-text">No More Projects </h3>
+                    </div>
+              </div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+{% endblock %}

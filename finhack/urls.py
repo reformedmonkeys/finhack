@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'main.views.home', name='home'),
     url(r'^project/(?P<projectID>\S+)', 'main.views.project', name='project'),
+    url(r'^ngo/(?P<ngoID>\S+)', 'main.views.ngo', name='ngo'),
     url(r'^moo/', 'main.views.moocow', name='moocow'),
 ]

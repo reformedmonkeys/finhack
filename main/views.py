@@ -11,13 +11,30 @@ def home(request):
         }
     return render(request, "home.html", context)
 
+def ngo(request, ngoID):
+
+    owner = NgoDB.objects.filter(id=ngoID).latest('updated')
+    ownerdid= owner.id
+    queryset = ProjectDB.objects.filter(owner=ownerdid)
+
+    moo = 'moo here'
+    context = {
+        "queryset": queryset,
+        "owner": owner,
+        }
+    return render(request, "ngo.html", context)
+
 def project(request, projectID):
     t = ProjectDB.objects.filter(id=projectID).latest('updated')
-    print t.name
+    ownerdid= t.owner.id
+    owner = NgoDB.objects.filter(id=ownerdid).latest('updated')
+    step = MilestonesDB.objects.filter(project=t.id)
 
     moo = 'moo here'
     context = {
         "t": t,
+        "owner": owner,
+        "step": step
         }
     return render(request, "project.html", context)
 
