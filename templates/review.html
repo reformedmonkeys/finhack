@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}
+  Donate
+{% endblock %}
+
+{% block content %}
+
+    <div class="section" >
+        <div class="container">
+
+        </div>
+      </div>
+
+
+
+        <div class="row center">
+
+                <div class="col s12 m12 grey-text">
+                        <form method='POST' action=''>
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                    
+                                <input class='waves-effect waves-light btn-large deep-orange btn-block' id='savebutton' type='submit' value='Donate' />
+                    
+                            </form>
+                    
+
+                    </div>
+              </div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+{% endblock %}

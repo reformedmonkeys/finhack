@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import DonorDB, NgoDB, ProjectDB, MilestonesDB, ContractDB, MilestoneReview
+from .forms import NewContract
 
 
 # Create your views here.
@@ -38,6 +39,49 @@ def project(request, projectID):
         }
     return render(request, "project.html", context)
 
+
+def donate(request, targetmilestone):
+    t = MilestonesDB.objects.get(id=targetmilestone)
+    towner = t.owner.id
+    tproject=t.project.id
+    t = ContractDB.objects.create(ngo_id=towner, project_id=tproject, milestone_id = targetmilestone, donor_id = 1, amount='200')
+    t.save
+    print "success"
+    context = {
+        "targetmilestone": targetmilestone,
+        }
+    return render(request, "donate2.html", context)
+
+
+def mytrans(request, myid):
+    t = ContractDB.objects.get(donor=myid)
+    r = MilestoneReview.objects.get(donor=myid)
+    name = DonorDB.objects.get(id=myid)
+    context = {
+        "t": t,
+        "r": r,
+        "name": "name"
+        }
+    return render(request, "mytrans.html", context)
+
+def review_milestone(request, milestoneID):
+    t = MilestoneReview.objects.get(id=milestoneID)
+    print 'success'
+    print targetmilestone
+    context = {
+        "targetmilestone": targetmilestone,
+        }
+    return render(request, "review.html", context)
+
+def seeblockchain(request):
+    t = ContractDB.objects.filter()
+    r = MilestoneReview.objects.filter()
+
+    context = {
+        "t": t,
+        "r": r,
+        }
+    return render(request, "mytrans.html", context)
 
 def moocow(request):
     moo = 'moo here'

@@ -21,5 +21,8 @@ urlpatterns = [
     url(r'^$', 'main.views.home', name='home'),
     url(r'^project/(?P<projectID>\S+)', 'main.views.project', name='project'),
     url(r'^ngo/(?P<ngoID>\S+)', 'main.views.ngo', name='ngo'),
+    url(r'^donate/(?P<targetmilestone>\S+)', 'main.views.donate', name='donate'),
+    url(r'^review/(?P<milestoneID>\S+)', 'main.views.review_milestone', name='review_milestone'),
+    url(r'^mytrans/(?P<myid>\S+)', 'main.views.mytrans', name='mytrans'),
     url(r'^moo/', 'main.views.moocow', name='moocow'),
 ]

@@ -41,7 +41,7 @@
                       <h4 class="header"> X of Y tokens raised </h4>
                       <br>
                       <div class="progress">
-                          <div class="determinate" style="width: 50%"></div>
+                          <div class="indeterminate"></div>
                       </div>
                       <br>
                       {% for object in step %}
@@ -51,7 +51,7 @@
                          <p>{{ object.status  }}</p>
 
                       {% if object.status == "open" %}
-                      <a href="{% url 'ngo' ngoID=3 %}" id="download-button" class="btn waves-effect waves-light orange">Donate Now</a>
+                      <a href="{% url 'donate' targetmilestone=object.milestone_number %}" id="download-button" class="btn waves-effect waves-light orange">Donate 100 Tokens Now</a>
                       {% else %}
                       
                       {% endif %}
