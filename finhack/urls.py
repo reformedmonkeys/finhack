@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^donate/(?P<targetmilestone>\S+)', 'main.views.donate', name='donate'),
     url(r'^review/(?P<milestoneID>\S+)', 'main.views.review_milestone', name='review_milestone'),
     url(r'^mytrans/(?P<myid>\S+)', 'main.views.mytrans', name='mytrans'),
-    url(r'^moo/', 'main.views.moocow', name='moocow'),
+    url(r'^seeblockchain/', 'main.views.seeblockchain', name='seeblockchain'),
 ]

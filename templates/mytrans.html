@@ -4,15 +4,83 @@
 
 
 {% block head_title %}
-  Donate
+  BlockChain View
 {% endblock %}
 
 {% block content %}
 
     <div class="section" >
         <div class="container">
-          <h4> List of my Transactions</h4>
-          
+
+
+
+          <h4> List of Transactions</h4>
+
+          <table style="width:100%">
+                <tr>
+                        <th>Donor</th>
+                        <th>NGO</th> 
+                        <th>Project</th>
+                        <th>Amount</th>
+                        <th>Timestamp</th>
+                </tr>
+                
+                {% for t in t %}
+                <tr>
+                  <td>{{ t.donor.name }}</td>
+                  <td>{{ t.ngo.name }}</td> 
+                  <td>{{ t.project.name }}</td>
+                  <td>{{ t.amount }}</td>
+                  <td>{{ t.timestamp }}</td>
+                </tr>
+                {% endfor %}
+              </table>
+
+
+
+        <h4> List of Reviews</h4>
+        <table style="width:100%">
+                <tr>
+                        <th>Donor</th>
+                        <th>NGO</th> 
+                        <th>Project</th>
+                        <th>Milestone</th>
+                        <th>Review Information</th>
+                        <th>Review Transparency</th>
+                        <th>Review Completion</th>
+                </tr>
+                
+                <!-- {% for object in r %} -->
+                <tr>
+                        <td>Warren Buffet</td>
+                        <td>Rodney's Farm</td> 
+                        <td>Rice Patties in Indonesia</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>9</td>
+                      </tr>
+                <tr>
+                  <td>Bill Gates</td>
+                  <td>Rodney's Farm</td> 
+                  <td>Rice Patties in Indonesia</td>
+                  <td>8</td>
+                  <td>7</td>
+                  <td>7</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                        <td>Jeff Bezos</td>
+                        <td>Habitat for Humanity</td> 
+                        <td>Houses in Sudan</td>
+                        <td>9</td>
+                        <td>9</td>
+                        <td>5</td>
+                        <td>9</td>
+                      </tr>
+                <!-- {% endfor %} -->
+              </table>
+
         </div>
       </div>
 

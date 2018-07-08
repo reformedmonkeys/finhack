@@ -54,8 +54,8 @@ def donate(request, targetmilestone):
 
 
 def mytrans(request, myid):
-    t = ContractDB.objects.get(donor=myid)
-    r = MilestoneReview.objects.get(donor=myid)
+    t = ContractDB.objects.filter(donor=myid)
+    r = MilestoneReview.objects.filter(donor=myid)
     name = DonorDB.objects.get(id=myid)
     context = {
         "t": t,
